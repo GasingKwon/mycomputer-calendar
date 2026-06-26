@@ -26,6 +26,7 @@
   "license": "UNLICENSED",
   "build": {
     "appId": "com.magin.remember-tasks-calendar",
+    "artifactName": "remember-tasks-calendar-setup-${version}.${ext}",
     "productName": "할 일을 기억해라",
     "directories": {
       "output": "release"
