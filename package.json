@@ -1,0 +1,84 @@
+{
+  "name": "remember-tasks-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Windows local sticker calendar app for personal tasks.",
+  "main": "out/main/main.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "tsc --noEmit && electron-vite build",
+    "dist": "npm run build && electron-builder --win --x64",
+    "dist:publish": "npm run build && electron-builder --win --x64 --publish always",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "validate:fixtures": "node harness/scripts/validate-data.js harness/fixtures/empty-data.json && node harness/scripts/validate-data.js harness/fixtures/sample-month.json && node harness/scripts/validate-data.js harness/fixtures/recurring-sample.json",
+    "seed:sample": "node harness/scripts/seed-sample-data.js sample-month tmp-data.json"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "calendar",
+    "tasks",
+    "local-first"
+  ],
+  "author": "magin",
+  "license": "UNLICENSED",
+    "build": {
+    "appId": "com.magin.remember-tasks-calendar",
+    "productName": "할 일을 기억해라",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "extraMetadata": {
+      "main": "out/main/main.js"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "GasingKwon",
+        "repo": "mycomputer-calendar"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "할 일을 기억해라"
+    }
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron-updater": "^6.8.9",
+    "electron-vite": "^3.0.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}

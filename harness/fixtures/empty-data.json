@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "tasks": [],
+  "categories": [
+    {
+      "id": "study",
+      "name": "Study",
+      "color": "#1a73e8"
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "color": "#188038"
+    }
+  ],
+  "waterRecords": [],
+  "settings": {
+    "alwaysOnTop": false,
+    "opacity": 1,
+    "startAtLogin": false,
+    "windowBounds": {
+      "x": 100,
+      "y": 100,
+      "width": 1100,
+      "height": 720
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "tasks": [
+    {
+      "id": "44444444-4444-4444-8444-444444444444",
+      "title": "Drink water",
+      "date": "2026-06-01",
+      "time": "09:00",
+      "categoryId": null,
+      "priority": "low",
+      "dueDate": null,
+      "repeatEveryDays": 1,
+      "notificationEnabled": true,
+      "completed": false,
+      "memo": "",
+      "createdAt": "2026-06-01T08:00:00+09:00",
+      "updatedAt": "2026-06-01T08:00:00+09:00"
+    },
+    {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "title": "Weekly review",
+      "date": "2026-06-01",
+      "time": "17:30",
+      "categoryId": "study",
+      "priority": "normal",
+      "dueDate": null,
+      "repeatEveryDays": 7,
+      "notificationEnabled": true,
+      "completed": false,
+      "memo": "Review last week's tasks",
+      "createdAt": "2026-06-01T08:10:00+09:00",
+      "updatedAt": "2026-06-01T08:10:00+09:00"
+    },
+    {
+      "id": "66666666-6666-4666-8666-666666666666",
+      "title": "Month-end budget review",
+      "date": "2026-06-30",
+      "time": null,
+      "categoryId": "home",
+      "priority": "high",
+      "dueDate": "2026-06-30",
+      "repeatEveryDays": 30,
+      "notificationEnabled": true,
+      "completed": false,
+      "memo": "",
+      "createdAt": "2026-06-01T08:20:00+09:00",
+      "updatedAt": "2026-06-01T08:20:00+09:00"
+    }
+  ],
+  "categories": [
+    {
+      "id": "study",
+      "name": "Study",
+      "color": "#1a73e8"
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "color": "#188038"
+    }
+  ],
+  "waterRecords": [
+    {
+      "date": "2026-06-01",
+      "amountMl": 2000
+    }
+  ],
+  "settings": {
+    "alwaysOnTop": false,
+    "opacity": 1,
+    "startAtLogin": false,
+    "windowBounds": {
+      "x": 100,
+      "y": 100,
+      "width": 1100,
+      "height": 720
+    }
+  }
+}
