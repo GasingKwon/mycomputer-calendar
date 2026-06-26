@@ -1,6 +1,6 @@
 {
   "name": "remember-tasks-calendar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Windows local sticker calendar app for personal tasks.",
   "main": "out/main/main.js",
