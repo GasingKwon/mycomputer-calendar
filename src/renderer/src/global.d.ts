@@ -11,6 +11,7 @@ declare global {
       saveCategories: (categories: Category[]) => Promise<AppData>;
       updateSettings: (patch: Partial<AppSettings>) => Promise<AppData>;
       hideToTray: () => Promise<void>;
+      setWidgetMode: (enabled: boolean) => Promise<void>;
       getDataPath: () => Promise<string>;
     };
   }

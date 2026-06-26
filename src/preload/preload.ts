@@ -12,5 +12,6 @@ contextBridge.exposeInMainWorld("rememberTasks", {
   updateSettings: (patch: Partial<AppSettings>): Promise<AppData> =>
     ipcRenderer.invoke("settings:update", patch),
   hideToTray: (): Promise<void> => ipcRenderer.invoke("window:hideToTray"),
+  setWidgetMode: (enabled: boolean): Promise<void> => ipcRenderer.invoke("window:setWidgetMode", enabled),
   getDataPath: (): Promise<string> => ipcRenderer.invoke("window:getDataPath")
 });

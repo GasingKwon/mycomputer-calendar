@@ -8,6 +8,7 @@ import type { AppData, AppSettings, Category, Task } from "../shared/types";
 
 let mainWindow: BrowserWindow | null = null;
 let isQuitting = false;
+let isWidgetMode = false;
 
 export async function createMainWindow() {
   const data = await loadAppData();
@@ -88,6 +89,9 @@ export function registerIpcHandlers() {
   ipcMain.handle("window:hideToTray", () => {
     mainWindow?.hide();
   });
+  ipcMain.handle("window:setWidgetMode", (_event, enabled: boolean) => {
+    setWidgetMode(enabled);
+  });
   ipcMain.handle("window:getDataPath", () => getDataFilePath());
 }
 
@@ -114,4 +118,21 @@ export function applySettings(settings: AppSettings) {
     openAtLogin: settings.startAtLogin,
     path: process.execPath
   });
+}
+
+export function setWidgetMode(enabled: boolean) {
+  if (!mainWindow || isWidgetMode === enabled) {
+    return;
+  }
+
+  isWidgetMode = enabled;
+
+  if (enabled) {
+    mainWindow.setMinimumSize(320, 420);
+    mainWindow.setSize(360, 560);
+    return;
+  }
+
+  mainWindow.setMinimumSize(640, 520);
+  mainWindow.setSize(1100, 720);
 }

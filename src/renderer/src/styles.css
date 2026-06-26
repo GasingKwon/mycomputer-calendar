@@ -15,8 +15,8 @@
 
 body {
   margin: 0;
-  min-width: 640px;
-  min-height: 520px;
+  min-width: 320px;
+  min-height: 420px;
   overflow: hidden;
 }
 
@@ -44,6 +44,10 @@ button {
   display: grid;
   grid-template-rows: auto auto 1fr;
   background: #f8fafd;
+}
+
+.app.mode-widget {
+  grid-template-rows: auto 1fr;
 }
 
 .toolbar {
@@ -105,6 +109,34 @@ h1 {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.segmented {
+  height: 34px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 34px);
+  overflow: hidden;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.segmented button {
+  border: 0;
+  border-right: 1px solid #dadce0;
+  background: transparent;
+  color: #5f6368;
+  display: grid;
+  place-items: center;
+}
+
+.segmented button:last-child {
+  border-right: 0;
+}
+
+.segmented button.active {
+  background: #e8f0fe;
+  color: #1a73e8;
 }
 
 .icon-button,
@@ -197,6 +229,23 @@ h1 {
   border-right: 1px solid #dadce0;
   background: #fff;
   overflow: hidden;
+}
+
+.water-panel.compact {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) 88px minmax(0, 1fr);
+  grid-template-rows: auto;
+  padding: 12px;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+}
+
+.water-panel.compact .water-cup {
+  width: 76px;
+}
+
+.water-panel.compact .water-actions {
+  text-align: left;
 }
 
 .water-copy {
@@ -526,6 +575,11 @@ h2 {
   padding-block: 7px;
 }
 
+.task-row.compact {
+  grid-template-columns: 18px minmax(0, 1fr);
+  min-height: 40px;
+}
+
 .task-row > input[type="checkbox"] {
   margin-top: 9px;
 }
@@ -578,6 +632,152 @@ h2 {
   padding: 12px 16px 14px;
   border-top: 1px solid #dadce0;
   background: #fff;
+}
+
+.today-workspace {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(380px, 1fr) minmax(320px, 34vw);
+  overflow: hidden;
+}
+
+.today-focus {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+  padding: 16px;
+  overflow: auto;
+  border-right: 1px solid #dadce0;
+  background: #fff;
+}
+
+.today-summary,
+.section-title,
+.summary-chips {
+  display: flex;
+  align-items: center;
+}
+
+.today-summary {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.summary-chips {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.summary-chips span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #dadce0;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff;
+  color: #3c4043;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.focus-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.focus-list {
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+}
+
+.focus-list.priority {
+  grid-column: 1 / -1;
+}
+
+.section-title {
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.section-title svg {
+  color: #1a73e8;
+}
+
+.section-title h3 {
+  font-size: 15px;
+}
+
+.widget-view {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 10px;
+  overflow: auto;
+  padding: 12px;
+  background: #fff;
+}
+
+.widget-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.widget-tasks {
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.mode-widget .toolbar {
+  min-height: 56px;
+  padding: 10px 12px;
+}
+
+.mode-widget .brand {
+  min-width: 0;
+}
+
+.mode-widget .brand h1 {
+  max-width: 132px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.mode-widget .brand p {
+  font-size: 12px;
+}
+
+.mode-widget .toolbar-actions {
+  gap: 6px;
+}
+
+.mode-widget .segmented {
+  grid-template-columns: repeat(3, 30px);
+}
+
+.mode-widget .segmented,
+.mode-widget .icon-button {
+  height: 30px;
+}
+
+.mode-widget .icon-button {
+  width: 30px;
 }
 
 .category-title {
