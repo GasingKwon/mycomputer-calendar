@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { APP_NAME } from "../shared/constants";
 import { deleteTask, getAppData, getDataFilePath, loadAppData, saveAppData, updateSettings, upsertTask } from "./storage";
 import { setupTray } from "./tray";
+import { getAppIconPath } from "./app-icon";
 import type { AppData, AppSettings, Category, Task } from "../shared/types";
 
 let mainWindow: BrowserWindow | null = null;
@@ -20,6 +21,7 @@ export async function createMainWindow() {
     minWidth: 640,
     minHeight: 520,
     title: APP_NAME,
+    icon: getAppIconPath(),
     backgroundColor: "#f8fafd",
     show: false,
     opacity: data.settings.opacity,

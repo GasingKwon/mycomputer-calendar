@@ -34,6 +34,12 @@
       "out/**/*",
       "package.json"
     ],
+    "extraResources": [
+      {
+        "from": "build/icon.ico",
+        "to": "icon.ico"
+      }
+    ],
     "extraMetadata": {
       "main": "out/main/main.js"
     },

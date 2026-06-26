@@ -1,4 +1,6 @@
-import { Menu, Tray, BrowserWindow, nativeImage, app } from "electron";
+import { app, BrowserWindow, Menu, Tray } from "electron";
+import { APP_NAME } from "../shared/constants";
+import { getAppIconImage } from "./app-icon";
 
 let tray: Tray | null = null;
 
@@ -7,14 +9,8 @@ export function setupTray(getWindow: () => BrowserWindow | null) {
     return tray;
   }
 
-  const image = nativeImage.createFromDataURL(
-    "data:image/svg+xml;utf8," +
-      encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="16" height="16" rx="3" fill="#1a73e8"/><path d="M4 5h8M4 8h8M4 11h5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>'
-      )
-  );
-  tray = new Tray(image);
-  tray.setToolTip("할 일을 기억해라");
+  tray = new Tray(getAppIconImage());
+  tray.setToolTip(APP_NAME);
   tray.setContextMenu(
     Menu.buildFromTemplate([
       {
